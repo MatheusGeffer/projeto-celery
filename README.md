@@ -1,7 +1,10 @@
 # Projeto de Cadastro com Geração de dados fictícios 
 Este é um projeto simples de cadastro de usuários que gera informações fictícias usando a biblioteca Faker, incluindo nomes, idades, e-mails e endereços. Além de uma função de geração de números validados de cpf's imaginários, O projeto também utiliza a biblioteca Celery para processamento assíncrono de tarefas e geração de CPFs válidos.
+
 O Celery é responsável por executar a tarefa de geração de cadastros de usuários em segundo plano, permitindo que o processo principal continue sua execução sem esperar pela conclusão da tarefa.
+
 O RabbitMQ atua como um sistema de mensagens (broker) que implementa o protocolo de mensagens avançado (AMQP). Ele desempenha um papel crucial no projeto, servindo como o broker do Celery. O RabbitMQ recebe, armazena e roteia as tarefas enviadas pelo Celery para os seus respectivos consumidores (workers) que irão executá-las.
+
 Além disso, o projeto utiliza o MongoDB como o backend do Celery para armazenar resultados das tarefas, como por exemplo, os cadastros de usuários gerados. O MongoDB é um banco de dados NoSQL orientado a documentos que oferece uma solução flexível e escalável para armazenamento de dados.
 
 ## Funcionalidades
